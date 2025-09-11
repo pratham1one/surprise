@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -65,7 +61,7 @@
 </head>
 <body>
   <div class="card">
-    <h1>I love you soumya i can't tell you face to face.so will you be my 'madam ji'🤞😭🤗(please naa mat bolna) ❤️</h1>
+    <h1>i love you soumya.i can't tell you face to face.so will you be my madam ji😭😭🤞🤞❤️(yes or no)? ❤️</h1>
     <div class="buttons">
       <button class="yes" onclick="sayYes()">Yes</button>
       <button class="no" id="noBtn" onclick="sayNo()">No</button>
@@ -77,7 +73,7 @@
 
   <script>
     function sayYes() {
-      alert("ab ek baaar soch lo gaali dena hai yaa phir reply mera ho gya 😭😭😭!");
+      alert("chalo sabse jyada khush rakhunga(maine toh bata diya ab tumhari baari dm mein aao🫠🫠🫠)");
 
       // Fire confetti 🎉
       var duration = 3 * 1000;
@@ -100,14 +96,18 @@
         if (Date.now() < end) {
           requestAnimationFrame(frame);
         } else {
-          // After confetti, show video
-          showVideo();
+          document.body.innerHTML = `
+            <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#ff9a9e;flex-direction:column;color:white;text-align:center;">
+              <h1>🎉 She said YES! 🎉</h1>
+              <h2>Forever together ❤️</h2>
+            </div>
+          `;
         }
       }());
     }
 
     function sayNo() {
-      alert("ek baar phir se soch lo mere se jyada koi tumhare nakhre nahi jhelega🙃🙃🙃🙃!");
+      alert("ek baar or sochlo mere alawa koi tumhare nakhre nahi jhelne wala🙃🙃😭!");
     }
 
     // Make the NO button run away
@@ -126,3 +126,6 @@
       noBtn.style.left = newX + "px";
       noBtn.style.top = newY + "px";
     });
+  </script>
+</body>
+</html>
