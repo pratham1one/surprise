@@ -36,31 +36,30 @@
   </style>
 </head>
 <body>
-  <h1>Scan the QR to Open My Surprise ❤️</h1>
+  <h1>Scan the QR ❤️</h1>
   <div id="qrcode"></div>
   <button onclick="openCard()">Open Proposal Now</button>
 
-  <!-- QRCode.js library -->
+  <!-- QRCode.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script>
-    // 👉 Replace this with your GitHub Pages / Netlify link
-    const proposalLink = "https://your-username.github.io/proposal-card/";
+    // 👉 Replace "your-username" with your GitHub username
+    // 👉 Replace "proposal-card" with your repo name
+    const proposalLink = "https://your-username.github.io/proposal-card/proposal.html";
 
-    // Generate QR Code
+    // Generate QR code
     new QRCode(document.getElementById("qrcode"), {
       text: proposalLink,
       width: 200,
       height: 200
     });
 
-    // Open link if button is clicked
     function openCard() {
       window.location.href = proposalLink;
     }
   </script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,7 +123,7 @@
 </head>
 <body>
   <div class="card">
-    <h1>soumya I love you, i can't say you face to face.so will you accept my proposal😭🤞❤️❤️</h1>
+    <h1>I love you soumya i can't tell you face to face.so will you be my 'madam ji' ❤️</h1>
     <div class="buttons">
       <button class="yes" onclick="sayYes()">Yes</button>
       <button class="no" id="noBtn" onclick="sayNo()">No</button>
@@ -136,7 +135,7 @@
 
   <script>
     function sayYes() {
-      alert("yay!I will never break your trust❤️🤗");
+      alert("ab asli wala reply chat pe kardo!");
 
       // Fire confetti 🎉
       var duration = 3 * 1000;
@@ -158,12 +157,15 @@
 
         if (Date.now() < end) {
           requestAnimationFrame(frame);
+        } else {
+          // After confetti, show video
+          showVideo();
         }
       }());
     }
 
     function sayNo() {
-      alert("😭😭😭😭😭Are you sure about it...please think again🙃🙃🙃🙃!");
+      alert("ek baar phir se soch lo mere se jyada koi tumhare nakhre nahi jhelega🙃🙃🙃🙃!");
     }
 
     // Make the NO button run away
@@ -182,45 +184,18 @@
       noBtn.style.left = newX + "px";
       noBtn.style.top = newY + "px";
     });
+
+    // Show surprise video
+    function showVideo() {
+      document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;">
+          <video width="100%" height="auto" controls autoplay>
+            <source src="love.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      `;
+    }
   </script>
 </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proposal QR</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
-      font-family: Arial, sans-serif;
-      margin: 0;
-      flex-direction: column;
-      text-align: center;
-    }
-    h1 {
-      color: #ff4d6d;
-      margin-bottom: 20px;
-    }
-    #qrcode {
-      margin: 20px;
-    }
-    button {
-      padding: 12px 20px;
-      background: #ff4d6d;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
 </html>
