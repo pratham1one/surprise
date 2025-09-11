@@ -3,6 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal QR</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+    #qrcode {
+      margin: 20px;
+    }
+    button {
+      padding: 12px 20px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scan the QR to Open My Surprise ❤️</h1>
+  <div id="qrcode"></div>
+  <button onclick="openCard()">Open Proposal Now</button>
+
+  <!-- QRCode.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // 👉 Replace this with your GitHub Pages / Netlify link
+    const proposalLink = "https://your-username.github.io/proposal-card/";
+
+    // Generate QR Code
+    new QRCode(document.getElementById("qrcode"), {
+      text: proposalLink,
+      width: 200,
+      height: 200
+    });
+
+    // Open link if button is clicked
+    function openCard() {
+      window.location.href = proposalLink;
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proposal Card</title>
   <style>
     body {
@@ -121,4 +184,43 @@
     });
   </script>
 </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal QR</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      flex-direction: column;
+      text-align: center;
+    }
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+    #qrcode {
+      margin: 20px;
+    }
+    button {
+      padding: 12px 20px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
 </html>
