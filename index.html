@@ -35,6 +35,7 @@
       justify-content: center;
       gap: 20px;
       margin-top: 20px;
+      position: relative;
     }
     button {
       padding: 12px 25px;
@@ -43,7 +44,6 @@
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
-      position: relative;
     }
     .yes {
       background: #ff4d6d;
@@ -55,16 +55,16 @@
     .no {
       background: #ddd;
       color: #333;
-      position: absolute;
+      position: relative; /* starts next to Yes */
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>i love you mihu.i can't tell you face to face.so will you be my madam ji😭😭🤞🤞❤️(yes or no)? ❤️</h1>
+    <h1>Will you be mine forever? ❤️</h1>
     <div class="buttons">
       <button class="yes" onclick="sayYes()">Yes</button>
-      <button class="no" id="noBtn" onclick="sayNo()">No</button>
+      <button class="no" id="noBtn">No</button>
     </div>
   </div>
 
@@ -73,7 +73,7 @@
 
   <script>
     function sayYes() {
-      alert("maine toh bata diya ab tumhari baari dm mein aao🫠🫠🫠");
+      alert("Yay! ❤️ I knew you would say YES!");
 
       // Fire confetti 🎉
       var duration = 3 * 1000;
@@ -96,10 +96,13 @@
         if (Date.now() < end) {
           requestAnimationFrame(frame);
         } else {
+          // After confetti, show video 🎬
           document.body.innerHTML = `
-            <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#ff9a9e;flex-direction:column;color:white;text-align:center;">
-              <h1>🎉 She said YES! 🎉</h1>
-              <h2>Forever together ❤️</h2>
+            <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;">
+              <video width="100%" height="auto" controls autoplay>
+                <source src="love.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           `;
         }
@@ -107,11 +110,13 @@
     }
 
     function sayNo() {
-      alert("ek baar or sochlo mere alawa koi tumhare nakhre nahi jhelne wala🙃🙃😭!");
+      alert("😢 Please think again... You can only say YES!");
     }
 
-    // Make the NO button run away
+    // Handle No button hover and click
     const noBtn = document.getElementById("noBtn");
+
+    // When mouse goes near No, it jumps away
     noBtn.addEventListener("mouseover", () => {
       const card = document.querySelector(".card");
       const cardRect = card.getBoundingClientRect();
@@ -123,9 +128,13 @@
       const newX = Math.floor(Math.random() * maxX);
       const newY = Math.floor(Math.random() * maxY);
 
+      noBtn.style.position = "absolute"; // allow movement
       noBtn.style.left = newX + "px";
       noBtn.style.top = newY + "px";
     });
+
+    // If she somehow still clicks No
+    noBtn.addEventListener("click", sayNo);
   </script>
 </body>
 </html>
