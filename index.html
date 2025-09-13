@@ -53,15 +53,15 @@
       background: #e63950;
     }
     .no {
-      background: #ddd;
-      color: #333;
+     background: #ff4d6d;
+      color: white;
       position: relative; /* starts next to Yes */
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Will you be mine forever? ❤️</h1>
+    <h1>I love you soumya.i can't tell you this face to face.so will you be my madam ji😭😭🤞🤞? ❤️</h1>
     <div class="buttons">
       <button class="yes" onclick="sayYes()">Yes</button>
       <button class="no" id="noBtn">No</button>
@@ -73,7 +73,7 @@
 
   <script>
     function sayYes() {
-      alert("Yay! ❤️ I knew you would say YES!");
+      alert("ek chota sa surprise hai dekh lo🙃!uske baad dm mein gaali dena😭😭");
 
       // Fire confetti 🎉
       var duration = 3 * 1000;
@@ -99,18 +99,17 @@
           // After confetti, show video 🎬
           document.body.innerHTML = `
             <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;">
-              <video width="100%" height="auto" controls autoplay>
-                <source src="love.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+  <video style="width:40%; border-radius:15px;" controls autoplay>
+    <source src="love.mp4" type="video/mp4">
+  </video>
+</div>
           `;
         }
       }());
     }
 
     function sayNo() {
-      alert("😢 Please think again... You can only say YES!");
+      alert("ek baar or soch lo mere alawa koi or nakhre nahi uthayega tumhare🙃🙃!");
     }
 
     // Handle No button hover and click
